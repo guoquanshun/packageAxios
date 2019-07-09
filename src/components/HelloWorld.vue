@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ apione.msg }}</h1>
   </div>
 </template>
 
@@ -10,8 +10,13 @@ export default {
   props: {
     msg: String
   },
+  data() {
+    return {
+      apione: ''
+    }
+  },
   mounted() {
-    //   this.MyAxios.view(this);
+      this.MyAxios.view(this);
       this.MyAxios.apione();
   }
 }
