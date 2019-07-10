@@ -1,23 +1,25 @@
 <template>
   <div class="hello">
-    <h1>{{ apione.msg }}</h1>
+    <div>GoodsTwo</div>
+    <h1>{{ goods && goods.data && goods.data.goods.title }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'GoodsTwo',
   props: {
     msg: String
   },
   data() {
     return {
-      apione: ''
+      goods: ''
     }
   },
   mounted() {
-      this.MyAxios.view(this);
-      this.MyAxios.apione();
+      // 在projectAxios里面自动绑定数据
+      this.projectAxios.getComponentThis(this);
+      this.projectAxios.apitwo({dataname: 'goods'});
   }
 }
 </script>
